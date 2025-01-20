@@ -40,6 +40,7 @@
 .logo{
     display: block;
     margin: 0 auto;
+    padding-top: 10px;
     width: 300px;
     max-width: 300px; 
     max-height: 100px;
@@ -49,6 +50,50 @@ h2{
     text-align: center;
     color: var(--secondary-text);
     margin-top: 15px;
+}
+
+#search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-block: 40px;
+}
+
+#pokemon-search{
+    width: 30%;
+    max-width: 400px;
+    height: 30px;
+    padding: 5px;
+    border: solid 2px red;
+    border-radius: 100vmax;
+    text-align: center;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, .5);
+    font-weight: 500;
+    font-size: medium;
+}
+
+#pokemon-search:focus{
+    outline: none;
+    border: solid 2px red;
+    box-shadow: 0 0 0.8rem red;
+    
+}
+
+#search-button{
+    font-weight:500;
+    font-size: 15px;
+    border: solid 2px var(--type-electric);
+    border-radius: 100vmax;
+    padding: 5px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, .5);
+    transition: .2s ease-in-out;
+}
+
+#search-button:hover{
+    transform: scale(1.1);
+    background-color: var(--type-electric);
+    cursor: pointer;
 }
 
 ul{
@@ -248,7 +293,7 @@ main{
 }
 .poison{
     background-color: var(--type-poison);
-    color: var(--text-color);
+    color: var(--secondary-text);
 }
 .ground{
     background-color: var(--type-ground);
@@ -272,15 +317,15 @@ main{
 }
 .ghost{
     background-color: var(--type-ghost);
-    color: var(--text-color);
+    color: var(--secondary-text);
 }
 .dark{
     background-color: var(--type-dark);
-    color: var(--text-color);
+    color: var(--secondary-text);
 }
 .dragon{
     background-color: var(--type-dragon);
-    color: var(--text-color);
+    color: var(--secondary-text);
 }
 .steel{
     background-color: var(--type-steel);

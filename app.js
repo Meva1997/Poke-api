@@ -1,5 +1,7 @@
 const listaPokemon = document.querySelector('#listaPokemon'); 
 const btnHeader = document.querySelectorAll('.btn-header');
+const searchBtn = document.querySelector('#search-button');
+const pokemonSearchInput = document.querySelector('#pokemon-search'); 
 
 let url = 'https://pokeapi.co/api/v2/pokemon/'; 
 
@@ -8,10 +10,14 @@ let pokemonList = [];
 async function cargarPokemon(){
     
     for (let i = 1; i <= 151; i++){
-        const response = await fetch(url + i)
-        const pokemon = await response.json(); 
-        pokemonList.push(pokemon)//guardar los pokemon en el array 
-        mostrarPokemon(pokemon)  // mostrar todos inicialmente
+        try {
+            const response = await axios.get(url + i); 
+            const pokemon = response.data; //accedemos directamente a los datos con Axios 
+            pokemonList.push(pokemon)//guardar los pokemon en el array 
+            mostrarPokemon(pokemon)  // mostrar todos inicialmente
+        } catch(error){
+            console.error(`Error fetching Pokémon with ID ${i}:`, error); 
+        }
     }
 }
 
@@ -68,6 +74,16 @@ function limpiarHTML(){
     }
 }
 
+//buscar pokemon por nombre 
+function buscarPokemon(nombre){
+    limpiarHTML();
+    
+    const pokemonBuscado = pokemonList.filter((poke) => 
+    poke.name.toLowerCase().includes(nombre.toLowerCase())
+    ); 
+
+    pokemonBuscado.forEach((poke) => mostrarPokemon(poke)); 
+}
 
 // Agregar eventos a los botones
 btnHeader.forEach((boton) => {
@@ -77,4 +93,33 @@ btnHeader.forEach((boton) => {
     });
 });
 
-cargarPokemon(); 
+searchBtn.addEventListener('click', () => {
+    const pokemonNombre = pokemonSearchInput.value.trim(); 
+    if(pokemonNombre){
+        buscarPokemon(pokemonNombre); 
+        pokemonSearchInput.value = '';  //limpiar input despues de buscar 
+    } else {
+         // Si el campo está vacío, mostrar todos los Pokémon
+        limpiarHTML();
+        pokemonList.forEach((poke) => mostrarPokemon(poke));
+    }
+})
+
+pokemonSearchInput.addEventListener('keypress', (e) => {
+    if(e.key === 'Enter'){
+        const pokemonNombre = pokemonSearchInput.value.trim();
+        if(pokemonNombre){
+            buscarPokemon(pokemonNombre); 
+            pokemonSearchInput.value = ''; 
+        } else {
+             // Si el campo está vacío, mostrar todos los Pokémon
+            limpiarHTML(); 
+            pokemonList.forEach((poke) => mostrarPokemon(poke));
+        }   
+    }
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    cargarPokemon(); 
+    
+})
