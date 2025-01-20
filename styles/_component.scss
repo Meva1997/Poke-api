@@ -1,0 +1,98 @@
+
+
+@mixin button-reset{
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+@mixin search-button{
+    font-weight:500;
+    font-size: 15px;
+    border-radius: 100vmax;
+    padding: 5px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, .5);
+    transition: .2s ease-in-out;
+}
+
+@mixin btn-header{
+    padding: 0.5rem;
+    border-radius: 100vmax;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 0 1rem rgba(0,0,0, 0.5);
+}
+
+.normal{
+    background-color: $type-normal;
+    color: $text-color;
+}
+.fire{
+    background-color: $type-fire;
+    color: $text-color;
+}
+.water{
+    background-color: $type-water;
+    color: $text-color;
+}
+.grass{
+    background-color: $type-grass;
+    color: $text-color;
+}
+.electric{
+    background-color: $type-electric;
+    color: $text-color;
+}
+.ice{
+    background-color: $type-ice;
+    color: $text-color;
+}
+.fighting{
+    background-color: $type-fighting;
+    color: $secondary-text;
+}
+.poison{
+    background-color: $type-poison;
+    color: $secondary-text;
+}
+.ground{
+    background-color: $type-ground;
+    color: $text-color;
+}
+.flying{
+    background-color: $type-flying;
+    color: $text-color;
+}
+.psychic{
+    background-color: $type-psychic;
+    color: $text-color;
+}
+.bug{
+    background-color: $type-bug;
+    color: $text-color;
+}
+.rock{
+    background-color: $type-rock;
+    color: $text-color;
+}
+.ghost{
+    background-color: $type-ghost;
+    color: $secondary-text;
+}
+.dark{
+    background-color: $type-dark;
+    color: $secondary-text;
+}
+.dragon{
+    background-color: $type-dragon;
+    color: $secondary-text;
+}
+.steel{
+    background-color: $type-steel;
+    color: $text-color;
+}
+.fairy{
+    background-color: $type-fairy;
+    color: $text-color;
+}

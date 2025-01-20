@@ -1,0 +1,146 @@
+$text-color: black; 
+$secondary-text: white; 
+$header-color:red; 
+$type-normal: rgb(168, 168, 120); 
+$type-fire: rgb(240, 128, 48);
+$type-water: rgb(104, 144, 240); 
+$type-grass: rgb(120, 200, 80); 
+$type-electric: rgb(248, 208, 48); 
+$type-ice: rgb(152, 216, 216); 
+$type-fighting: rgb(192, 48, 40); 
+$type-poison: rgb(160, 64, 160); 
+$type-ground: rgb(224, 192, 104); 
+$type-flying: rgb(168, 144, 240); 
+$type-psychic: rgb(248, 88, 136); 
+$type-bug: rgb(168, 184, 32); 
+$type-rock: rgb(184, 160, 56); 
+$type-ghost: rgb(112, 88, 152); 
+$type-dark: rgb(112, 88, 72); 
+$type-dragon: rgb(112, 56, 248); 
+$type-steel: rgb(184, 184, 208); 
+$type-fairy: rgb(238, 153, 172); 
+
+
+@mixin reinicio {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+    font-family: 'Rubik', sans-serif;
+}
+
+@mixin logo{
+    display: block;
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 300px;
+    max-width: 300px; 
+    max-height: 100px;
+}
+
+@mixin search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-block: 40px;
+}
+
+@mixin pokemon-search{
+    width: 30%;
+    max-width: 400px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 100vmax;
+    display: block;
+    text-align: center;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, .5);
+    font-weight: 500;
+    font-size: medium;
+}
+
+@mixin nav{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 2rem;
+    max-width: 1000px;
+    margin: 0 auto; 
+}
+
+@mixin nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    gap: .5rem;
+    padding: 0;
+}
+
+@mixin main{
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 2rem;
+    max-width: 1400px;
+}
+
+@mixin pokemon{
+    border-radius: 1rem;
+    box-shadow: 0 0 1.5rem rgba(0,0,0, .5);
+    padding-block: 1rem;
+    text-transform: uppercase;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+@mixin pokemon-id_back{
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 6rem;
+    font-weight: 800;
+    z-index: -1;
+}
+
+@mixin pokemon-info{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding-inline: 1rem;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin nombre-contenedor{
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@mixin pokemon-id{
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+@mixin pokemon-tipos{
+    display: flex;
+    gap:1rem; 
+    font-size: .75rem;
+    font-weight: 500;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@mixin stat{
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+    flex-wrap: wrap;
+    justify-content: center;
+}

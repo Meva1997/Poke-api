@@ -1,0 +1,160 @@
+* {
+    @include reinicio; 
+}
+
+header{
+    .header{
+        background-color: $header-color;
+        height: auto;
+    }
+
+    .logo{
+        @include logo; 
+    }
+
+
+    h2{
+        text-align: center;
+        color: $secondary-text;
+        margin-top: 15px;
+    }
+}
+
+#search{
+    @include search; 
+}
+
+#pokemon-search{
+    @include pokemon-search;
+    border: solid 2px $header-color;
+
+    &:focus{
+        outline: none;
+        border: solid 2px $header-color;
+        box-shadow: 0 0 0.8rem $header-color;
+    }
+}
+
+#search-button{
+    @include search-button;
+    border: solid 2px $type-electric;
+
+    &:hover{
+        transform: scale(1.1);
+        background-color: $type-electric;
+        cursor: pointer;
+    }
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+.nav-pokemon{
+    padding-block: 1rem;
+    box-shadow: 0 0 2rem -1rem rgb(0,0,0, 0.5);
+}
+
+.nav{
+    @include nav; 
+}
+
+.nav-list{
+    @include nav-list;
+}
+
+button{
+    @include button-reset;
+}
+
+.btn-header{
+    @include btn-header;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+main{
+    @include main;
+    background-color: rgb(242, 242, 242);
+}
+
+.pokemon-todos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 950px){
+
+    .pokemon-todos{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 650px){
+
+    .pokemon-todos{
+        grid-template-columns: 1fr;
+    }
+}
+
+.pokemon{
+    @include pokemon;
+    background-color: $secondary-text;
+}
+
+.pokemon-id-back{
+    @include pokemon-id_back;
+    color: rgb(213, 213, 213);
+}
+
+.pokemon-imagen{
+    padding-inline: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-imagen img{
+    width: 100%;
+    max-width: 6rem;
+}
+
+.pokemon-info{
+    @include pokemon-info;
+}
+
+.nombre-contenedor{
+    @include nombre-contenedor;
+}
+
+.pokemon-id{
+    @include pokemon-id; 
+    background-color: rgb(236, 236, 236);
+}
+
+.pokemon-nombre{
+    font-size: 1.4rem;
+}
+
+.pokemon-tipos{
+    @include pokemon-tipos;
+}
+
+.tipo{
+    padding: .25rem .5rem;
+    border-radius: 100vmax;
+}
+
+.pokemon-stats{
+    display: flex;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.stat{
+    @include stat; 
+    background-color: rgb(236, 236, 236);
+}
